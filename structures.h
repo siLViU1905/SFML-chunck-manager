@@ -17,6 +17,8 @@ namespace sts
 		const sf::RectangleShape& getComponent() const;
 
 		 sf::RectangleShape& getComponent();
+
+		 virtual void textureFile(const char* filename) = 0;
 		
 		 virtual void generate(const sf::Vector2f& pos, const sf::Vector2f& size) = 0;
 
