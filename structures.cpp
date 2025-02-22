@@ -1,16 +1,13 @@
 #include "structures.h"
 #include <iostream>
 
-
-//extern sf::Texture* lakeTexture = new sf::Texture;
-//extern sf::Texture* grassTexture = new sf::Texture;
 sf::Texture lakeTexture;
 sf::Texture grassTexture;
 
 namespace sts
 {
 
-	structure::structure() //:texture(new sf::Texture()) 
+	structure::structure() 
 	{}
 
 	const sf::RectangleShape& structure::getComponent() const
@@ -31,24 +28,14 @@ namespace sts
 
 	structure::~structure() 
 	{
-		//delete texture;
+		
 	}
 
 	lake::lake() :structure() {}
 
-	void lake::textureFile(const char* filename)
-	{
-		if (!filename)
-			filename = "textures\\lakeTex.png";
-		//if (!texture.loadFromFile(filename))
-			return;
-		std::cout << "Lake texture loaded\n";
-	}
-
 
 	void lake::generate(const sf::Vector2f& pos, const sf::Vector2f& size)
 	{
-		//component.setTexture(lakeTexture);
 		component.setTexture(&lakeTexture);
 		component.setFillColor(sf::Color::White);
 		component.setPosition(pos);
@@ -57,7 +44,6 @@ namespace sts
 
 	void lake::_generate()
 	{
-		//component.setTexture(lakeTexture);
 		component.setTexture(&lakeTexture);
 		component.setFillColor(sf::Color::White);
 	}
@@ -85,7 +71,6 @@ namespace sts
 
 	void grass::generate(const sf::Vector2f& pos, const sf::Vector2f& size)
 	{
-		//component.setTexture(grassTexture);
 		component.setTexture(&grassTexture);
 		component.setFillColor(sf::Color::White);
 		component.setPosition(pos);
@@ -94,7 +79,6 @@ namespace sts
 
 	void grass::_generate()
 	{
-		//component.setTexture(grassTexture);
 		component.setTexture(&grassTexture);
 		component.setFillColor(sf::Color::White);
 	}
@@ -109,7 +93,6 @@ namespace sts
 
 	bool initTextures()
 	{
-		//return lakeTexture->loadFromFile("textures\\lakeTex.png") && grassTexture->loadFromFile("textures\\grassTex.png");
 		return lakeTexture.loadFromFile("textures\\lakeTex.png") && grassTexture.loadFromFile("textures\\grassTex.png");
 	}
 
