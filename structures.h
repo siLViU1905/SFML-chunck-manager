@@ -11,8 +11,6 @@ namespace sts
 	{
 	protected:
 		sf::RectangleShape component;
-		//sf::Texture* texture;
-		//sf::Texture texture;
 	public:
 		structure();
 
