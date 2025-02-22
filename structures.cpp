@@ -1,6 +1,7 @@
 #include "structures.h"
 #include <iostream>
 
+
 sf::Texture lakeTexture;
 sf::Texture grassTexture;
 
@@ -33,9 +34,17 @@ namespace sts
 
 	lake::lake() :structure() {}
 
+	void lake::textureFile(const char* filename)
+	{
+		if (!filename)
+			filename = "textures\\lakeTex.png";
+		std::cout << "Lake texture loaded\n";
+	}
+
 
 	void lake::generate(const sf::Vector2f& pos, const sf::Vector2f& size)
 	{
+		
 		component.setTexture(&lakeTexture);
 		component.setFillColor(sf::Color::White);
 		component.setPosition(pos);
@@ -44,6 +53,7 @@ namespace sts
 
 	void lake::_generate()
 	{
+		
 		component.setTexture(&lakeTexture);
 		component.setFillColor(sf::Color::White);
 	}
@@ -71,6 +81,7 @@ namespace sts
 
 	void grass::generate(const sf::Vector2f& pos, const sf::Vector2f& size)
 	{
+		
 		component.setTexture(&grassTexture);
 		component.setFillColor(sf::Color::White);
 		component.setPosition(pos);
@@ -79,6 +90,7 @@ namespace sts
 
 	void grass::_generate()
 	{
+		
 		component.setTexture(&grassTexture);
 		component.setFillColor(sf::Color::White);
 	}
